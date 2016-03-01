@@ -27,17 +27,18 @@ Exit Codes:
   7  Generic error
 
 Notes:
-- Type 'make' to build the application. Type 'make clean' to remove the executable and object files.
-- The swarm_config_file should contain a separate line for each server to download from. The format of
-  each line should be as such: ftp://username:password@servername/file-path
-- Each line of the swarm_config_file needs to be separated by a Line Feed (LF) character. Carriage
-  Return (CR) characters will not work.
+- Type 'make' to build the application. Type 'make clean' to remove the executable and
+  object files.
+- The swarm_config_file should contain a separate line for each server to download from.
+  The format of each line should be as such: ftp://username:password@servername/file-path
+- Each line of the swarm_config_file needs to be separated by a Line Feed (LF)
+  character. Carriage Return (CR) characters will not work.
 - Valid values for <mode> are: ASCII, binary (case-sensitive)
-- If '-' (without quotes) is specified for <logfile>, then all commands will be printed to the standard
-  output.
-- When invoked without any options, the application will display help and usage information and exit with
-  status 0.
-- If an option is specified multiple times, the last argument assigned to that option is the argument
-  accepted.
-- When using a swarm_config_file, any arguments specified for username and password through options will
-  be overridden by the values specified in the file.
+- If '-' (without quotes) is specified for <logfile>, then all commands will be printed
+  to the standard output.
+- When invoked without any options, the application will display help and usage
+  information and exit with status 0.
+- If an option is specified multiple times, the last argument assigned to that option is
+  the argument accepted.
+- When using a swarm_config_file, any arguments specified for username and password
+  through options will be overridden by the values specified in the file.
