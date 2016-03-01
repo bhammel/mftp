@@ -1,0 +1,43 @@
+mftp 0.1
+Swarming FTP client.
+Copyright (C) 2016 Brandon Hammel
+
+Usage:
+  mftp (-s | --server) hostname (-f | --file) file [options]
+  mftp (-w | --swarm) swarm_config_file [-b num_bytes] [options]
+  mftp -h | --help
+  mftp -v | --version
+
+Options:
+  -a, --active               Forces active behavior [default: passive]
+  -l, --log <logfile>        Logs all the FTP commands exchanged with server to file
+  -m, --mode <mode>          Specifies the mode to be used for the transfer [default: binary]
+  -n, --username <username>  Specifies the username to use when logging into the FTP server [default: anonymous]
+  -p, --port <port>          Specifies the port to be used when contacting the server [default: 21]
+  -P, --password <password>  Specifies the password to use when logging into the FTP server [default: user@localhost.localnet]
+
+Exit Codes:
+  0  Operation successfully completed
+  1  Can't connect to server
+  2  Authentication failed
+  3  File not found
+  4  Syntax error in client request
+  5  Command not implemented by server
+  6  Operation not allowed by server
+  7  Generic error
+
+Notes:
+- Type 'make' to build the application. Type 'make clean' to remove the executable and object files.
+- The swarm_config_file should contain a separate line for each server to download from. The format of
+  each line should be as such: ftp://username:password@servername/file-path
+- Each line of the swarm_config_file needs to be separated by a Line Feed (LF) character. Carriage
+  Return (CR) characters will not work.
+- Valid values for <mode> are: ASCII, binary (case-sensitive)
+- If '-' (without quotes) is specified for <logfile>, then all commands will be printed to the standard
+  output.
+- When invoked without any options, the application will display help and usage information and exit with
+  status 0.
+- If an option is specified multiple times, the last argument assigned to that option is the argument
+  accepted.
+- When using a swarm_config_file, any arguments specified for username and password through options will
+  be overridden by the values specified in the file.
